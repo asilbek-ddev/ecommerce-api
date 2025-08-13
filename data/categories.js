@@ -1,8 +1,10 @@
+const BASE_URL = "https://uzum-face-api.vercel.app"
+
 module.exports = [
     {
         id: 10020,
         title: "Elektronika",
-        img: "/dacha.svg",
+        img: `${BASE_URL}/dacha.svg`,
         children: [
             {
                 id: 10044,
