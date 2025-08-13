@@ -11,7 +11,6 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use("./assets", express.static(path.join(__dirname, "assets")));
 
 
 app.use("/api/products", productsRoute)
