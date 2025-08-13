@@ -49,7 +49,7 @@ module.exports = [
     {
         id: 10004,
         title: "Maishiy texnika",
-        img: `${BASE_URL}/maishiyTexnika.svg`,
+        img: `${BASE_URL}/maisheyTexnika.svg`,
         children: []
 
     },
