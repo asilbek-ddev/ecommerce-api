@@ -4,7 +4,7 @@ module.exports = [
     {
         id: 10020,
         title: "Elektronika",
-        img: `${BASE_URL}/dacha.svg`,
+        img: `${BASE_URL}/elektronika.svg`,
         children: [
             {
                 id: 10044,
