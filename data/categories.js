@@ -2,45 +2,45 @@ module.exports = [
     {
         id: 10020,
         title: "Elektronika",
-        icon: "./assets/dacha.svg",
-            children: [
-                {
-                    id: 10044,
-                    title: "Smartfonlar va telefonlar",
-                    children: [
-                        {
-                            id: 10398,
-                            title: "Smartfonlar uchun aksessuarlar",
-                        },
-                        {
-                            id: 14262,
-                            title: "Knopkali telefonlar",
-                        },
-                        {
-                            id: 12690,
-                            title: "Smartfonlar",
-                        },
-                        {
-                            id: 15335,
-                            title: "Ehtiyot qismlar va ta'mirlash",
-                        },
-                        {
-                            id: 13733,
-                            title: "Statsionar-telefonlar",
-                        },
-                    ]
-                },
-                {
-                    id: 10030,
-                    title: "Noutbuklar, planshetlar va elektron kitoblar",
-                    children: [
-                        {
-                            id: 15718,
-                            title: "Noutbuklar"
-                        }
-                    ]
-                }
-            ]
+        img: "./assets/dacha.svg",
+        children: [
+            {
+                id: 10044,
+                title: "Smartfonlar va telefonlar",
+                children: [
+                    {
+                        id: 10398,
+                        title: "Smartfonlar uchun aksessuarlar",
+                    },
+                    {
+                        id: 14262,
+                        title: "Knopkali telefonlar",
+                    },
+                    {
+                        id: 12690,
+                        title: "Smartfonlar",
+                    },
+                    {
+                        id: 15335,
+                        title: "Ehtiyot qismlar va ta'mirlash",
+                    },
+                    {
+                        id: 13733,
+                        title: "Statsionar-telefonlar",
+                    },
+                ]
+            },
+            {
+                id: 10030,
+                title: "Noutbuklar, planshetlar va elektron kitoblar",
+                children: [
+                    {
+                        id: 15718,
+                        title: "Noutbuklar"
+                    }
+                ]
+            }
+        ]
 
     },
     {
