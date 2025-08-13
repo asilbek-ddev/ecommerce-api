@@ -1,101 +1,101 @@
 module.exports = [
     {
-        id: 1,
+        id: 10020,
         title: "Elektronika",
 
     },
     {
-        id: 1,
+        id: 10004,
         title: "Maishiy texnika",
 
     },
     {
-        id: 1,
+        id: 10014,
         title: "Kiyim",
 
     },
     {
-        id: 1,
+        id: 10013,
         title: "Poyabzallar",
 
     },
     {
-        id: 1,
+        id: 10003,
         title: "Aksessuarlar",
 
     },
     {
-        id: 1,
+        id: 10012,
         title: "Go'zallik va parvarish",
 
     },
     {
-        id: 1,
+        id: 10009,
         title: "Salomatlik",
 
     },
     {
-        id: 1,
+        id: 10018,
         title: "Uy-ro'zg'or buyumlari",
 
     },
     {
-        id: 1,
+        id: 10016,
         title: "Qurilish va ta'mirlash",
 
     },
     {
-        id: 1,
+        id: 10002,
         title: "Avtotovarlar",
 
     },
     {
-        id: 1,
+        id: 10007,
         title: "Bolalar tovarlari",
 
     },
     {
-        id: 1,
+        id: 10008,
         title: "Xobbi va ijod",
 
     },
     {
-        id: 1,
+        id: 10015,
         title: "Sport va hordiq",
 
     },
     {
-        id: 1,
+        id: 1821,
         title: "Oziq-ovqat mahsulotlari",
 
     },
     {
-        id: 1,
+        id: 10005,
         title: "Maishiy kimyoviy moddalar",
 
     },
     {
-        id: 1,
+        id: 10010,
         title: "Kanselyariya tovarlari",
 
     },
     {
-        id: 1,
+        id: 10019,
         title: "Hayvonlar uchun tovarlar",
 
     },
     {
-        id: 1,
+        id: 10011,
         title: "Kitoblar",
 
     },
     {
-        id: 1,
+        id: 10006,
         title: "Dacha, bog' va tomorqa",
 
     },
     {
-        id: 1,
+        id: 12087,
         title: "Realibitatsiya uchun subsidiyalangan mahsulotlar",
 
     },
