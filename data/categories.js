@@ -2,7 +2,7 @@ module.exports = [
     {
         id: 10020,
         title: "Elektronika",
-        img: "./public/dacha.svg",
+        img: "/dacha.svg",
         children: [
             {
                 id: 10044,
