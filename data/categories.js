@@ -108,7 +108,7 @@ module.exports = [
     {
         id: 10002,
         title: "Avtotovarlar",
-        img: `${BASE_URL}/autoTovarlar.svg`,
+        img: `${BASE_URL}/avtoTovarlar.svg`,
         children: []
 
     },
