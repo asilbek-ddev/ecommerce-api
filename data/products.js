@@ -2,5 +2,9 @@ module.exports = [
     {
         id: 1,
         name: "Elektronika",
+    },
+    {
+        id: 2,
+        name: "Products",
     }
 ]
