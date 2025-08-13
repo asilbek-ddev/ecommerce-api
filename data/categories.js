@@ -129,7 +129,7 @@ module.exports = [
     {
         id: 10015,
         title: "Sport va hordiq",
-        img: `${BASE_URL}/sportvaHordiq.svg`,
+        img: `${BASE_URL}/sportVaHordiq.svg`,
         children: []
 
     },
