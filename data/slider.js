@@ -4,11 +4,11 @@ module.exports = [
     {
         id: 15152,
         link: "https://uzum.uz/uz/promo/freetime",
-        img: `${BASE_URL}/main_page_banner.png`
+        img: `${BASE_URL}/banners/main_page_banner.png`
     },
     {
         id: 15154,
         link: "",
-        img: ""
+        img: `${BASE_URL}/banners/main_page_banner_2.png`
     }
 ]
