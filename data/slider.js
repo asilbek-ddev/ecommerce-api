@@ -3,8 +3,8 @@ const BASE_URL = "https://uzum-face-api.vercel.app"
 module.exports = [
     {
         id: 15152,
-        link: "https://uzum.uz/uz/promo/freetime",
-        img: `${BASE_URL}/banners/main_page_banner1.png`
+        link: "/promo/freetime",
+        img: `${BASE_URL}/banners/main_page_banner_1.png`
     },
 
     {
