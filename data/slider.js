@@ -3,13 +3,13 @@ const BASE_URL = "https://uzum-face-api.vercel.app"
 module.exports = [
     {
         id: 15152,
-        link: "/promo/freetime",
+        link: "/promo/freetime--15152",
         img: `${BASE_URL}/banners/main_page_banner_1.png`
     },
 
     {
         id: 15154,
-        link: "/category/garantiya-nizkikh-cen",
+        link: "/category/garantiya-nizkikh-cen--15154",
         img: `${BASE_URL}/banners/main_page_banner_2.png`
     },
 
@@ -21,13 +21,13 @@ module.exports = [
 
     {
         id: 52656,
-        link: "/roduct/napitok-gazirovanny-sting-3000-ml",
+        link: "/roduct/napitok-gazirovanny-sting-3000-ml--52656",
         img: `${BASE_URL}/banners/main_page_banner_4.png`
     },
 
     {
         id: 97452,
-        link: "/shop/oilatanlovikiyim",
+        link: "/shop/oilatanlovikiyim--97452",
         img: `${BASE_URL}/banners/main_page_banner_5.png`
     },
 
@@ -39,56 +39,60 @@ module.exports = [
 
     {
         id: 98532,
-        link: "/category/neoline-darit-podarki",
+        link: "/category/neoline-darit-podarki--98532",
         img: `${BASE_URL}/banners/main_page_banner_7.png`
     },
 
     {
         id: 15454,
-        link: "/category/tureckaya-posuda",
+        link: "/category/tureckaya-posuda--15454",
         img: `${BASE_URL}/banners/main_page_banner_8.png`
     },
 
     {
         id: 21540,
-        link: "/category/skidki-na-crocs",
+        link: "/category/skidki-na-crocs--21540",
         img: `${BASE_URL}/banners/main_page_banner_9.png`
     },
 
     {
         id: 69852,
-        link: "/category/mark-ryden",
+        link: "/category/mark-ryden--69852",
         img: `${BASE_URL}/banners/main_page_banner_10.png`
     },
 
     {
         id: 31024,
-        link: "/category/oila-tanlovi",
+        link: "/category/oila-tanlovi--31024",
         img: `${BASE_URL}/banners/main_page_banner_11.png`
     },
+
     {
         id: 76052,
-        link: "",
+        link: "/category/vybirajte-skorst--76052",
         img: `${BASE_URL}/banners/main_page_banner_12.png`
     },
+
     {
         id: 41035,
-        link: "",
+        link: "/category/genau-chegermalari--41035",
         img: `${BASE_URL}/banners/main_page_banner_13.png`
     },
+
     {
         id: 97036,
-        link: "",
+        link: "/category/hammasi-salomatlik-uchun--97036",
         img: `${BASE_URL}/banners/main_page_banner_14.png`
     },
+
     {
         id: 10354,
-        link: "",
+        link: "/category/dlya-bratev-menshikh--10354",
         img: `${BASE_URL}/banners/main_page_banner_15.png`
     },
     {
         id: 84035,
-        link: "",
+        link: "/category/vkusko-i-vygodno--1400",
         img: `${BASE_URL}/banners/main_page_banner_16.png`
     },
     {
