@@ -3,13 +3,13 @@ const BASE_URL = "https://uzum-face-api.vercel.app"
 module.exports = [
     {
         id: 15152,
-        link: "/promo/freetime--15152",
+        link: "https://uzum.uz/uz/promo/freetime",
         img: `${BASE_URL}/banners/main_page_banner_1.png`
     },
 
     {
         id: 15154,
-        link: "/category/garantiya-nizkikh-cen--15154",
+        link: "garantiya-nizkikh-cen",
         img: `${BASE_URL}/banners/main_page_banner_2.png`
     },
 
@@ -21,7 +21,7 @@ module.exports = [
 
     {
         id: 52656,
-        link: "/roduct/napitok-gazirovanny-sting-3000-ml--52656",
+        link: "napitok-gazirovanny-sting-3000-ml",
         img: `${BASE_URL}/banners/main_page_banner_4.png`
     },
 
@@ -90,36 +90,43 @@ module.exports = [
         link: "/category/dlya-bratev-menshikh--10354",
         img: `${BASE_URL}/banners/main_page_banner_15.png`
     },
+
     {
         id: 84035,
         link: "/category/vkusko-i-vygodno--1400",
         img: `${BASE_URL}/banners/main_page_banner_16.png`
     },
+
     {
         id: 75843,
-        link: "",
+        link: "/category/kabrita--75843",
         img: `${BASE_URL}/banners/main_page_banner_17.png`
     },
+
     {
         id: 29343,
-        link: "",
+        link: "/category/vsyo-dlya-fitnesa-i--29343",
         img: `${BASE_URL}/banners/main_page_banner_18.png`
     },
+
     {
         id: 29487,
-        link: "",
+        link: "/category/osvezhayuschie-napitki--29487",
         img: `${BASE_URL}/banners/main_page_banner_19.png`
     },
+
     {
         id: 48382,
-        link: "",
+        link: "/category/bezuprechnaya-chistota-i-svezhest--48382",
         img: `${BASE_URL}/banners/main_page_banner_20.png`
     },
+
     {
         id: 49382,
-        link: "",
+        link: "/category/skidki-henkel--49382",
         img: `${BASE_URL}/banners/main_page_banner_21.png`
     },
+
     {
         id: 29480,
         link: "",
