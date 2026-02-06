@@ -138,6 +138,7 @@ exports.getAllProducts = (req, res, next) => {
 
     res.status(200).json(results);
   } catch (error) {
+    console.log("getAllProducts xatosi", error);
     next(error);
   }
 };
@@ -190,6 +191,7 @@ exports.getFilterOptions = (req, res, next) => {
 
     res.status(200).json(filterOptions);
   } catch (error) {
+    console.error('getFilterOptions xatosi:', error.message);
     next(error);
   }
 };
@@ -224,6 +226,7 @@ exports.getProductById = (req, res, next) => {
       },
     });
   } catch (error) {
+    console.error('getProductById xatosi:', error.message);
     next(error);
   }
 };
@@ -272,6 +275,7 @@ exports.getProductsByCategory = (req, res, next) => {
       data: paginatedProducts,
     });
   } catch (error) {
+    console.error('getProductsByCategory xatosi:', error.message);
     next(error);
   }
 };
@@ -311,6 +315,7 @@ exports.getDiscountedProducts = (req, res, next) => {
       data: paginatedProducts,
     });
   } catch (error) {
+    console.error('getDiscountedProducts xatosi:', error.message);
     next(error);
   }
 };
