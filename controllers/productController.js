@@ -1,140 +1,127 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 const getProducts = () => {
   try {
-    const filePath = path.join(__dirname, '../data/products.json');
-    const data = fs.readFileSync(filePath, 'utf-8');
+    const filePath = path.join(__dirname, "../data/products.json");
+    const data = fs.readFileSync(filePath, "utf-8");
     return JSON.parse(data);
   } catch (error) {
-    console.error('❌ JSON o\'qishda xato:', error.message);
+    console.error("❌ JSON o'qishda xato:", error.message);
     return [];
   }
 };
 
-// Barcha mahsulotlarni olish (to'liq filterlash)
 exports.getAllProducts = (req, res, next) => {
   try {
     let products = getProducts();
-    
-    // 1️⃣ KATEGORIYA FILTERLASH
+
     const { categoryId } = req.query;
     if (categoryId) {
-      products = products.filter(p => p.categoryId === parseInt(categoryId));
+      products = products.filter((p) => p.categoryId === parseInt(categoryId));
     }
-    
-    // 2️⃣ NARX ORALIG'I (dan - gacha)
+
     const { minPrice, maxPrice } = req.query;
     if (minPrice) {
-      products = products.filter(p => p.sellPrice >= parseInt(minPrice));
+      products = products.filter((p) => p.sellPrice >= parseInt(minPrice));
     }
     if (maxPrice) {
-      products = products.filter(p => p.sellPrice <= parseInt(maxPrice));
+      products = products.filter((p) => p.sellPrice <= parseInt(maxPrice));
     }
-    
-    // 3️⃣ REYTING FILTERLASH
+
     const { minRating } = req.query;
     if (minRating) {
-      products = products.filter(p => p.rating >= parseFloat(minRating));
+      products = products.filter((p) => p.rating >= parseFloat(minRating));
     }
-    
-    // 4️⃣ QIDIRUV
+
     const { search } = req.query;
     if (search) {
       const searchLower = search.toLowerCase();
-      products = products.filter(p => 
-        p.title.toLowerCase().includes(searchLower)
+      products = products.filter((p) =>
+        p.title.toLowerCase().includes(searchLower),
       );
     }
-    
-    // 5️⃣ BREND FILTERLASH (agar kerak bo'lsa)
+
     const { brand } = req.query;
     if (brand) {
-      const brands = brand.split(','); // Bir nechta brend: ?brand=MAKFA,NIVEA
-      products = products.filter(p => 
-        p.brand && brands.includes(p.brand)
-      );
+      const brands = brand.split(",");
+      products = products.filter((p) => p.brand && brands.includes(p.brand));
     }
-    
-    // 6️⃣ RANG FILTERLASH
+
     const { color } = req.query;
     if (color) {
-      const colors = color.split(',');
-      products = products.filter(p => 
-        p.color && colors.includes(p.color)
-      );
+      const colors = color.split(",");
+      products = products.filter((p) => p.color && colors.includes(p.color));
     }
-    
-    // 7️⃣ CHEGIRMA MAVJUDLIGI
+
     const { hasDiscount } = req.query;
-    if (hasDiscount === 'true') {
-      products = products.filter(p => p.sellPrice < p.fullPrice);
+    if (hasDiscount === "true") {
+      products = products.filter((p) => p.sellPrice < p.fullPrice);
     }
-    
-    // 8️⃣ SARALASH (SORTING)
-    const { sortBy, order = 'asc' } = req.query;
-    
+
+    const { sortBy, order = "asc" } = req.query;
+
     if (sortBy) {
       products.sort((a, b) => {
         let aValue, bValue;
-        
-        switch(sortBy) {
-          case 'price':
+
+        switch (sortBy) {
+          case "price":
             aValue = a.sellPrice;
             bValue = b.sellPrice;
             break;
-            
-          case 'rating':
+
+          case "rating":
             aValue = a.rating;
             bValue = b.rating;
             break;
-            
-          case 'popularity': // Buyurtmalar soni
+
+          case "popularity":
             aValue = a.ordersQuantity;
             bValue = b.ordersQuantity;
             break;
-            
-          case 'discount': // Chegirma foizi
+
+          case "discount":
             aValue = ((a.fullPrice - a.sellPrice) / a.fullPrice) * 100;
             bValue = ((b.fullPrice - b.sellPrice) / b.fullPrice) * 100;
             break;
-            
-          case 'newest': // Yangilar
+
+          case "newest":
             aValue = new Date(a.createdAt || 0);
             bValue = new Date(b.createdAt || 0);
             break;
-            
+
           default:
             aValue = a[sortBy];
             bValue = b[sortBy];
         }
-        
-        if (order === 'desc') {
+
+        if (order === "desc") {
           return bValue > aValue ? 1 : -1;
         }
         return aValue > bValue ? 1 : -1;
       });
     }
-    
-    // 9️⃣ PAGINATION
+
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 20;
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
-    
+
     const paginatedProducts = products.slice(startIndex, endIndex);
-    
-    // 🔟 STATISTIKA
+
     const stats = {
       totalProducts: products.length,
       priceRange: {
-        min: Math.min(...products.map(p => p.sellPrice)),
-        max: Math.max(...products.map(p => p.sellPrice))
+        min: Math.min(...products.map((p) => p.sellPrice)),
+        max: Math.max(...products.map((p) => p.sellPrice)),
       },
-      avgRating: (products.reduce((sum, p) => sum + p.rating, 0) / products.length).toFixed(1),
-      discountedCount: products.filter(p => p.sellPrice < p.fullPrice).length
+      avgRating: (
+        products.reduce((sum, p) => sum + p.rating, 0) / products.length
+      ).toFixed(1),
+      discountedCount: products.filter((p) => p.sellPrice < p.fullPrice).length,
     };
-    
+
     const results = {
       success: true,
       count: products.length,
@@ -144,45 +131,45 @@ exports.getAllProducts = (req, res, next) => {
         totalPages: Math.ceil(products.length / limit),
         totalProducts: products.length,
         hasNextPage: endIndex < products.length,
-        hasPrevPage: page > 1
+        hasPrevPage: page > 1,
       },
-      data: paginatedProducts
+      data: paginatedProducts,
     };
-    
+
     res.status(200).json(results);
   } catch (error) {
     next(error);
   }
 };
 
-// Filter options (Frontend uchun)
 exports.getFilterOptions = (req, res, next) => {
   try {
     const products = getProducts();
     const { categoryId } = req.query;
-    
-    // Agar kategoriya tanlangan bo'lsa, faqat shu kategoriya mahsulotlaridan filter qilish
+
     let filteredProducts = products;
     if (categoryId) {
-      filteredProducts = products.filter(p => p.categoryId === parseInt(categoryId));
+      filteredProducts = products.filter(
+        (p) => p.categoryId === parseInt(categoryId),
+      );
     }
-    
-    // Brendlar
-    const brands = [...new Set(filteredProducts.map(p => p.brand).filter(Boolean))];
-    
-    // Ranglar
-    const colors = [...new Set(filteredProducts.map(p => p.color).filter(Boolean))];
-    
-    // Narx oralig'i
-    const prices = filteredProducts.map(p => p.sellPrice);
+
+    const brands = [
+      ...new Set(filteredProducts.map((p) => p.brand).filter(Boolean)),
+    ];
+
+    const colors = [
+      ...new Set(filteredProducts.map((p) => p.color).filter(Boolean)),
+    ];
+
+    const prices = filteredProducts.map((p) => p.sellPrice);
     const priceRange = {
       min: Math.min(...prices),
-      max: Math.max(...prices)
+      max: Math.max(...prices),
     };
-    
-    // Reyting variantlari
+
     const ratings = [5, 4.5, 4, 3.5, 3];
-    
+
     const filterOptions = {
       success: true,
       data: {
@@ -191,90 +178,88 @@ exports.getFilterOptions = (req, res, next) => {
         priceRange,
         ratings,
         sortOptions: [
-          { value: 'popularity', label: 'Ommabopligi bo\'yicha', order: 'desc' },
-          { value: 'price', label: 'Avval arzonlari', order: 'asc' },
-          { value: 'price', label: 'Avval qimmatlari', order: 'desc' },
-          { value: 'rating', label: 'Yuqori reyting', order: 'desc' },
-          { value: 'discount', label: 'Katta chegirma', order: 'desc' },
-          { value: 'newest', label: 'Yangilar', order: 'desc' }
-        ]
-      }
+          { value: "popularity", label: "Ommabopligi bo'yicha", order: "desc" },
+          { value: "price", label: "Avval arzonlari", order: "asc" },
+          { value: "price", label: "Avval qimmatlari", order: "desc" },
+          { value: "rating", label: "Yuqori reyting", order: "desc" },
+          { value: "discount", label: "Katta chegirma", order: "desc" },
+          { value: "newest", label: "Yangilar", order: "desc" },
+        ],
+      },
     };
-    
+
     res.status(200).json(filterOptions);
   } catch (error) {
     next(error);
   }
 };
 
-// Bitta mahsulot
 exports.getProductById = (req, res, next) => {
   try {
     const products = getProducts();
-    const product = products.find(p => p.productId === parseInt(req.params.id));
-    
+    const product = products.find(
+      (p) => p.productId === parseInt(req.params.id),
+    );
+
     if (!product) {
       return res.status(404).json({
         success: false,
-        error: 'Mahsulot topilmadi'
+        error: "Mahsulot topilmadi",
       });
     }
-    
-    // O'xshash mahsulotlar
+
     const similarProducts = products
-      .filter(p => 
-        p.categoryId === product.categoryId && 
-        p.productId !== product.productId
+      .filter(
+        (p) =>
+          p.categoryId === product.categoryId &&
+          p.productId !== product.productId,
       )
       .slice(0, 10);
-    
+
     res.status(200).json({
       success: true,
       data: {
         ...product,
-        similarProducts
-      }
+        similarProducts,
+      },
     });
   } catch (error) {
     next(error);
   }
 };
 
-// Kategoriya bo'yicha
 exports.getProductsByCategory = (req, res, next) => {
   try {
     const products = getProducts();
     const categoryId = parseInt(req.params.categoryId);
-    
-    let categoryProducts = products.filter(p => p.categoryId === categoryId);
-    
-    // Sorting
-    const { sortBy, order = 'asc' } = req.query;
+
+    let categoryProducts = products.filter((p) => p.categoryId === categoryId);
+
+    const { sortBy, order = "asc" } = req.query;
     if (sortBy) {
       categoryProducts.sort((a, b) => {
         let aValue = a[sortBy];
         let bValue = b[sortBy];
-        
-        if (sortBy === 'discount') {
+
+        if (sortBy === "discount") {
           aValue = ((a.fullPrice - a.sellPrice) / a.fullPrice) * 100;
           bValue = ((b.fullPrice - b.sellPrice) / b.fullPrice) * 100;
         }
-        
-        if (order === 'desc') {
+
+        if (order === "desc") {
           return bValue > aValue ? 1 : -1;
         }
         return aValue > bValue ? 1 : -1;
       });
     }
-    
-    // Pagination
+
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 20;
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
-    
+
     const paginatedProducts = categoryProducts.slice(startIndex, endIndex);
-    
+
     res.status(200).json({
       success: true,
       categoryId: categoryId,
@@ -282,37 +267,38 @@ exports.getProductsByCategory = (req, res, next) => {
       pagination: {
         currentPage: page,
         totalPages: Math.ceil(categoryProducts.length / limit),
-        totalProducts: categoryProducts.length
+        totalProducts: categoryProducts.length,
       },
-      data: paginatedProducts
+      data: paginatedProducts,
     });
   } catch (error) {
     next(error);
   }
 };
 
-// Chegirmalar
 exports.getDiscountedProducts = (req, res, next) => {
   try {
     const products = getProducts();
-    const discountedProducts = products.filter(p => p.sellPrice < p.fullPrice);
-    
-    const withDiscount = discountedProducts.map(p => ({
+    const discountedProducts = products.filter(
+      (p) => p.sellPrice < p.fullPrice,
+    );
+
+    const withDiscount = discountedProducts.map((p) => ({
       ...p,
-      discountPercentage: Math.round(((p.fullPrice - p.sellPrice) / p.fullPrice) * 100)
+      discountPercentage: Math.round(
+        ((p.fullPrice - p.sellPrice) / p.fullPrice) * 100,
+      ),
     }));
-    
-    // Eng katta chegirma birinchi
+
     withDiscount.sort((a, b) => b.discountPercentage - a.discountPercentage);
-    
-    // Pagination
+
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 20;
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
-    
+
     const paginatedProducts = withDiscount.slice(startIndex, endIndex);
-    
+
     res.status(200).json({
       success: true,
       title: "Chegirmalar",
@@ -320,9 +306,9 @@ exports.getDiscountedProducts = (req, res, next) => {
       pagination: {
         currentPage: page,
         totalPages: Math.ceil(withDiscount.length / limit),
-        totalProducts: withDiscount.length
+        totalProducts: withDiscount.length,
       },
-      data: paginatedProducts
+      data: paginatedProducts,
     });
   } catch (error) {
     next(error);
