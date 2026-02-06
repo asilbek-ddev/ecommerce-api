@@ -1,1 +1,0 @@
-# uzum.uz-api

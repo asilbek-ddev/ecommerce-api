@@ -1,0 +1,311 @@
+[
+  {
+    "id": 10001,
+    "title": "Turizm, baliq ovi va ovchilik",
+    "slug": "turizm-baliq-ovi-va",
+    "image_url": "",
+    "children": [
+      {
+        "id": 11001,
+        "title": "Chodirlar, tentlar va shatyorlar",
+        "slug": "chodirlar-tentlar-va-shatyorlar",
+        "children": [
+          {
+            "id": 11101,
+            "name": "Chodirlar",
+            "slug": "chodirlar"
+          },
+          {
+            "id": 11102,
+            "name": "Tentlar va chodirlar",
+            "slug": "tentlar-va-chodirlar"
+          },
+          {
+            "id": 11103,
+            "name": "Aksessuarlar chodirlar va tentlar uchun",
+            "slug": "aksessuarlar-chodirlar-va-tentlar"
+          }
+        ]
+      },
+      {
+        "id": 11002,
+        "title": "Baliq ovi",
+        "slug": "baliq-ovi",
+        "children": [
+          {
+            "id": 11104,
+            "name": "Gʻaltaklar baliq ovlash uchun",
+            "slug": "galtaklar-baliq-ovlash-uchun"
+          },
+          {
+            "id": 11105,
+            "name": "Baliq ovlash asboblari va aksessuarlari",
+            "slug": "baliq-ovlash-asboblari-va-aksessuarlari"
+          },
+          {
+            "id": 11106,
+            "name": "Baliq ovi uchun primankalar va o'ljalar",
+            "slug": "baliq-ovi-uchun-primankalar"
+          },
+          {
+            "id": 11107,
+            "name": "Qayiqlar va aksessuarlar",
+            "slug": "qayiqlar-va-aksessuarlar"
+          },
+          {
+            "id": 11108,
+            "name": "Ozuqalar, nasadkalar, baliq ovlash uchun aromatizatorlar",
+            "slug": "ozuqalar"
+          },
+          {
+            "id": 11109,
+            "name": "Leskalar va simlar",
+            "slug": "leskalar-va-simlar"
+          },
+          {
+            "id": 11110,
+            "name": "Ilgaklar, bog'ichlar va gruzilalar",
+            "slug": "ilgaklar"
+          },
+          {
+            "id": 11111,
+            "name": "Exolotlar va navigatsiya",
+            "slug": "exolotlar-va-navigatsiya"
+          }
+        ]
+      },
+      {
+        "id": 11003,
+        "title": "Ov va otish mashg'ulotlari",
+        "slug": "ov-va-otish-mashgulotlari",
+        "children": [
+          {
+            "id": 11112,
+            "name": "Cho'zmalar",
+            "slug": "chozmalar"
+          },
+          {
+            "id": 11113,
+            "name": "Optika va diqqatga sazovor joylar",
+            "slug": "optika-va-diqqatga-sazovor-joylar"
+          },
+          {
+            "id": 11114,
+            "name": "Sport otish mashqlari",
+            "slug": "sport-otish-mashqlari"
+          },
+          {
+            "id": 11115,
+            "name": "Trofeylar uchun bezaklar",
+            "slug": "trofeylar-uchun-bezaklar"
+          }
+        ]
+      },
+      {
+        "id": 11004,
+        "title": "Turizm va ochiq havoda dam olish",
+        "slug": "turizm-va-ochiq-havoda",
+        "children": [
+          {
+            "id": 11116,
+            "name": "Fonarlar va aksessuarlar",
+            "slug": "fonarlar-va-aksessuarlar"
+          },
+          {
+            "id": 11117,
+            "name": "Turizm va dam olish uchun aksessuarlar",
+            "slug": "turizm-va-dam-olish"
+          },
+          {
+            "id": 11118,
+            "name": "Sayohat uchun ryukzaklar va sumkalar",
+            "slug": "sayohat-uchun-ryukzaklar"
+          },
+          {
+            "id": 11119,
+            "name": "Katlanadigan sayyohlik stullari",
+            "slug": "katlanadigan-sayyohlik-stullari"
+          },
+          {
+            "id": 11120,
+            "name": "Sayohat uchun idishlar",
+            "slug": "sayohat-uchun-idishlar"
+          },
+          {
+            "id": 11121,
+            "name": "Sayyohlik stollari va mebel to'plamlari",
+            "slug": "sayyohlik-stollari-va-mebel"
+          },
+          {
+            "id": 11122,
+            "name": "Metall izlagichlar va aksessuarlar",
+            "slug": "metall-izlagichlar-va-aksessuarlar"
+          },
+          {
+            "id": 11123,
+            "name": "Uyqu qoplari",
+            "slug": "uyqu-qoplari"
+          },
+          {
+            "id": 11124,
+            "name": "Turistik gilamchalar",
+            "slug": "turistik-gilamchalar"
+          },
+          {
+            "id": 11125,
+            "name": "Nasoslar",
+            "slug": "nasoslar"
+          },
+          {
+            "id": 11126,
+            "name": "Orientatsiya uchun yordamchi vositalar",
+            "slug": "orientatsiya-uchun-yordamchi-vositalar"
+          },
+          {
+            "id": 11127,
+            "name": "Taktik kostyumlar",
+            "slug": "taktik-kostyumlar"
+          },
+          {
+            "id": 11128,
+            "name": "Osma qozonchalan va gulhan uchun uch oyoq",
+            "slug": "osma-qozonchalar-va-gulhan"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10002,
+    "title": "Elektronika",
+    "slug": "elektronika",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10003,
+    "title": "Maishiy texnika",
+    "slug": "maishiy-texnika",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10004,
+    "title": "Kiyim",
+    "slug": "kiyim",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10005,
+    "title": "Poyabzallar",
+    "slug": "poyabzallar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10006,
+    "title": "Aksessuarlar",
+    "slug": "aksessuarlar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10007,
+    "title": "Goʻzallik va parvarish",
+    "slug": "gozallik-va-parvarish",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10008,
+    "title": "Salomatlik",
+    "slug": "salomatlik",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10009,
+    "title": "Uy-roʻzgʻor buyumlari",
+    "slug": "uy-rozgor-buyumlari",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10010,
+    "title": "Qurilish va taʼmirlash",
+    "slug": "qurilish-va-tamirlash",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10011,
+    "title": "Avtotovarlar",
+    "slug": "avtotovarlar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10012,
+    "title": "Bolalar tovarlari",
+    "slug": "bolalar-tovarlar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10013,
+    "title": "Xobbi va ijod",
+    "slug": "xobbi-va-ijod",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10014,
+    "title": "Sport va hordiq",
+    "slug": "sport-va-hordiq",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10015,
+    "title": "Oziq-ovqat mahsulotlari",
+    "slug": "oziq-ovqat-mahsulotlari",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10016,
+    "title": "Maishiy kimyoviy moddalar",
+    "slug": "maishiy-kimyoviy-moddalar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10017,
+    "title": "Kanselyariya tovarlari",
+    "slug": "kanselyariya-tovarlar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10018,
+    "title": "Hayvonlar uchun tovarlar",
+    "slug": "hayvonlar-uchun-tovarlar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10019,
+    "title": "Kitoblar",
+    "slug": "kitoblar",
+    "image_url": "",
+    "children": []
+  },
+  {
+    "id": 10020,
+    "title": "Dacha, bogʻ va tomorqa",
+    "slug": "dacha-bog-va-tomorqa",
+    "image_url": "",
+    "children": []
+  }
+]
