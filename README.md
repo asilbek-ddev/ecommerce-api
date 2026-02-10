@@ -26,4 +26,4 @@ Asosiy endpoint:
 To‘liq endpointlar ro‘yxati va interaktiv sinov uchun quyidagilarni oching:  
 → https://ecommerce-uzum-api.onrender.com/api/v1/swagger 
 
-(Agar ochilmasa, loyiha egasidan so‘rang yoki /api/v1/main/products?f=docs kabi variantlarni sinab ko‘ring)
+Agar ochilmasa, loyiha egasidan so‘rang yoki /api/v1/main/products?f=docs kabi variantlarni sinab ko‘ring
