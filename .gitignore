@@ -18,7 +18,7 @@ log.txt
 .env.development.local
 .env.test.local
 .env.production.local
-.env.example       # faqat .env.example ni commit qilish kerak, .env ni emas
+.env.example
 
 .vscode/
 .idea/
